@@ -936,6 +936,23 @@ with tab2:
 
         tabla_lider = construir_tabla_productos(df_lider, maestro, df_cvs, "LIDER")
 
+        # =========================
+        # FORMATO VISUAL ACCESORIOS
+        # =========================
+        tabla_lider["Meta_Producto"] = tabla_lider.apply(
+            lambda r: f"$ {int(r['Meta_Producto']):,}".replace(",", ".")
+            if r["Producto"] == "ACCESORIOS"
+            else int(r["Meta_Producto"]),
+            axis=1
+        )
+
+        tabla_lider["Ejecutado"] = tabla_lider.apply(
+            lambda r: f"$ {int(r['Ejecutado']):,}".replace(",", ".")
+            if r["Producto"] == "ACCESORIOS"
+            else int(r["Ejecutado"]),
+            axis=1
+        )
+
         tabla_lider["Nombre"] = nombre_lider
         tabla_lider["Rol"] = "LIDER"
         tabla_lider["CVS"] = cvs_sel
@@ -993,6 +1010,29 @@ with tab2:
             st.metric("🎯 KPI Puntos", f"{int(ejec_p)} / {int(meta_p)}", f"{pct_p}%")
 
             tabla = construir_tabla_productos(g, maestro, df_cvs, "ASESOR")
+
+
+            # =========================
+            # FORMATO VISUAL ACCESORIOS
+            # =========================
+            tabla["Meta_Producto"] = tabla.apply(
+                lambda r: f"$ {int(r['Meta_Producto']):,}".replace(",", ".")
+                if r["Producto"] == "ACCESORIOS"
+                else int(r["Meta_Producto"]),
+                axis=1
+            )
+
+            tabla["Ejecutado"] = tabla.apply(
+                lambda r: f"$ {int(r['Ejecutado']):,}".replace(",", ".")
+                if r["Producto"] == "ACCESORIOS"
+                else int(r["Ejecutado"]),
+                axis=1
+            )
+
+
+
+
+
 
             tabla["Nombre"] = nombre
             tabla["Rol"] = "ASESOR"
@@ -1109,6 +1149,28 @@ with tab2:
             tabla = tabla.copy()
             nombre = tabla["Nombre"].iloc[0]
             rol = tabla["Rol"].iloc[0]
+
+
+            # =========================
+            # CONVERTIR ACCESORIOS A NÚMERO
+            # ANTES DE GUARDAR
+            # =========================
+            for columna in ["Meta_Producto", "Ejecutado"]:
+                tabla[columna] = (
+                    tabla[columna]
+                    .astype(str)
+                    .str.replace("$", "", regex=False)
+                    .str.replace(".", "", regex=False)
+                    .str.replace(" ", "", regex=False)
+                )
+
+                tabla[columna] = pd.to_numeric(
+                    tabla[columna],
+                    errors="coerce"
+                ).fillna(0)
+
+
+
 
             acc_valor = st.session_state.get(f"acc_{cvs_sel}_{nombre}", 100)
             tabla["ACC"] = acc_valor
