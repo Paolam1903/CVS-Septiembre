@@ -34,7 +34,7 @@ if not RUTA_LIQ.exists() or not RUTA_METAS.exists():
 # =============================
 st.markdown("""
 <div style="background-color:#E30613;padding:15px;border-radius:10px">
-<h1 style="color:white;text-align:center">📊 Dashboard Comercial y CVS PLUS al 7,Accesorios al 6 de septiembre – y Encuestas pendiente</h1>
+<h1 style="color:white;text-align:center">📊 Dashboard Comercial y CVS PLUS al 10,Accesorios al 6 de septiembre – y Encuestas pendiente</h1>
 </div>
 """, unsafe_allow_html=True)
 
@@ -556,10 +556,9 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
     nombre = str(nombre).upper() if nombre else ""
 
     # ==================================================
+    # 🔴 REGLA ESPECIAL FRONTINO Y SEGOVIA
     # ==================================================
-    # 🔴 REGLA ESPECIAL FRONTINO
-    # ==================================================
-    if cvs == "FRONTINO":
+    if cvs in ["FRONTINO", "SEGOVIA"]:
         if rol == "LIDER":
             return 0.50
         else:
@@ -584,6 +583,24 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
             return 1403 / 3500
 
     # ==================================================
+    # METRO EST. SAN ANTONIO
+    # ==================================================
+
+    if cvs == "METRO EST. SAN ANTONIO":
+
+        # Líder
+        if rol == "LIDER":
+            return 770 / 1000
+
+        # Daniel
+        elif "DANIEL" in nombre:
+            return 92 / 1000
+
+        # Jeider
+        elif "JEIDER" in nombre:
+            return 138 / 1000 
+
+    # ==================================================
     # JUNIN
     # ==================================================
 
@@ -605,9 +622,46 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
         elif "SANDRA" in nombre:
             return 1813.3 / 6800
 
-        # Julieth
-        elif "JULIETH" in nombre:
+        # YULIANA
+        elif "YULIANA" in nombre:
             return 785 / 6800
+
+    # ==================================================
+    # SABANETA
+    # ==================================================
+
+    if cvs == "SABANETA":
+
+        # LÃ­der Sandra - 40%
+        if rol == "LIDER":
+            return 1040 / 2600
+
+        # Andrea
+        elif "ANDREA" in nombre:
+            return 1440 / 2600
+
+        # Luz
+        elif "LUZ" in nombre:
+            return 120 / 2600
+
+    # ==================================================
+    # ENVIGADO
+    # ==================================================
+
+    if cvs == "ENVIGADO":
+
+        # Líder
+        if rol == "LIDER":
+            return 915.5 / 3500
+
+        # Yessica
+        elif "YESSICA" in nombre:
+            return 1373 / 3500
+
+        # Luz Enith
+        elif "LUZ" in nombre:
+            return 1211.5 / 3500
+
         
     # ==================================================
     # 🔴 REGLAS NORMALES
