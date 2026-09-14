@@ -91,11 +91,17 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
 
         # Andrea
         elif "ANDREA" in nombre:
-            return 1440 / 2600
+            return 480 / 2600
 
         # Luz
         elif "LUZ" in nombre:
             return 120 / 2600
+
+        # Elizabeth
+        elif "ELIZABETH" in nombre:
+            return 960 / 2600
+
+        
 
     # ==================================================
     # ENVIGADO
@@ -114,6 +120,50 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
         # Luz Enith
         elif "LUZ" in nombre:
             return 1211.5 / 3500
+
+    # ==================================================
+    # BELLO
+    # ==================================================
+
+    if cvs == "BELLO":
+
+        # Líder
+        if rol == "LIDER":
+            return 713 / 2850
+
+        # Cristian
+        elif "CRISTIAN" in nombre:
+            return 1069 / 2850
+
+        # Elizabeth
+        elif "ELIZABETH" in nombre:
+            return 411 / 2850
+
+        # Diana
+        elif "DIANA" in nombre:
+            return 658 / 2850
+
+    # ==================================================
+    # ITAGUI
+    # ==================================================
+
+    if cvs == "ITAGUI":
+
+        # Líder
+        if rol == "LIDER":
+            return 625 / 2500
+
+        # Dailyn
+        elif "DAILYN" in nombre:
+            return 938 / 2500
+
+        # Diana
+        elif "DIANA" in nombre:
+            return 361 / 2500
+
+        # Andrea
+        elif "ANDREA" in nombre:
+            return 577 / 2500
 
     
     # ==================================================
