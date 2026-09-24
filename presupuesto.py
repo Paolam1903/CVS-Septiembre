@@ -34,6 +34,58 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
         # Jeider
         elif "JEIDER" in nombre:
             return 1403 / 3500
+                
+        # Marvin
+        elif "MARVIN" in nombre:
+            return 145 / 3500
+
+    # ==================================================
+    # DON MATIAS
+    # ==================================================
+
+    if cvs == "DON MATIAS":
+
+        # Lider Diana
+        if rol == "LIDER":
+            return 392 / 1500
+
+        # Evelyn Daniela
+        elif "EVELYN" in nombre:
+            return 1108 / 1500
+
+    # ==================================================
+    # BARBOSA
+    # ==================================================
+
+    if cvs == "BARBOSA":
+
+        # Lider Paulina
+        if rol == "LIDER":
+            return 642 / 2400
+
+        # Evelis Mary 
+        elif "EVELIS" in nombre:
+            return 962 / 2400
+
+                # Sene
+        elif "SENE" in nombre:
+            return 796 / 2400
+
+    # ==================================================
+    # ZARAGOZA
+    # ==================================================
+
+    if cvs == "ZARAGOZA":
+
+        # Lider Zargoza Kelly
+        if rol == "LIDER":
+            return 138 / 1800
+
+        # Paola 
+        elif "EVELIS" in nombre:
+            return 1662 / 1800
+
+
 
     # ==================================================
     # METRO EST. SAN ANTONIO
