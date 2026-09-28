@@ -7,15 +7,15 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
 
     cvs = str(cvs).upper()
     nombre = str(nombre).upper() if nombre else ""
-           
+    
     # ==================================================
-    # 🔴 REGLA ESPECIAL FRONTINO Y SEGOVIA
+    # 🔴 REGLA ESPECIA
     # ==================================================
-    if cvs in ["FRONTINO", "SEGOVIA"]:
+    if cvs in ["SEGOVIA"]:
         if rol == "LIDER":
             return 0.50
         else:
-            return 0.50
+            return 0.50          
 
     # ==================================================
     # EL BAGRE
@@ -29,63 +29,48 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
 
         # Darly
         elif "DARLY" in nombre:
-            return 1161 / 3500
+            return 1016 / 3500
 
         # Jeider
         elif "JEIDER" in nombre:
             return 1403 / 3500
-                
+
         # Marvin
         elif "MARVIN" in nombre:
             return 145 / 3500
 
     # ==================================================
-    # DON MATIAS
+    # DABEIBA
     # ==================================================
 
-    if cvs == "DON MATIAS":
+    if cvs == "DABEIBA":
 
-        # Lider Diana
+        # Líder
         if rol == "LIDER":
-            return 392 / 1500
+            return 178 / 1450
 
-        # Evelyn Daniela
-        elif "EVELYN" in nombre:
-            return 1108 / 1500
+        # Estelli Alejandra
+        elif "ESTELLI" in nombre:
+            return 1105 / 1450
+
+        # Yeilisa Fernanda
+        elif "YEILISA" in nombre:
+            return 167 / 1450
 
     # ==================================================
-    # BARBOSA
+    # FRONTINO
     # ==================================================
 
-    if cvs == "BARBOSA":
+    if cvs == "FRONTINO":
 
-        # Lider Paulina
+        # Líder
         if rol == "LIDER":
-            return 642 / 2400
+            return 1237 / 2400
 
-        # Evelis Mary 
-        elif "EVELIS" in nombre:
-            return 962 / 2400
-
-                # Sene
-        elif "SENE" in nombre:
-            return 796 / 2400
-
-    # ==================================================
-    # ZARAGOZA
-    # ==================================================
-
-    if cvs == "ZARAGOZA":
-
-        # Lider Zargoza Kelly
-        if rol == "LIDER":
-            return 138 / 1800
-
-        # Paola 
-        elif "EVELIS" in nombre:
-            return 1662 / 1800
-
-
+        # Yeilisa Fernanda
+        elif "YEILISA" in nombre:
+            return 1163 / 2400
+        
 
     # ==================================================
     # METRO EST. SAN ANTONIO
