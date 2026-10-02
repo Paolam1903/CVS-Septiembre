@@ -25,19 +25,19 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
 
         # Líder
         if rol == "LIDER":
-            return 936 / 3500
+            return 861 / 3500
 
         # Darly
         elif "DARLY" in nombre:
-            return 1016 / 3500
+            return 944 / 3500
 
         # Jeider
         elif "JEIDER" in nombre:
-            return 1403 / 3500
+            return 1256 / 3500
 
         # Marvin
         elif "MARVIN" in nombre:
-            return 145 / 3500
+            return 439 / 3500
 
     # ==================================================
     # DABEIBA
@@ -88,25 +88,7 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
         # Yeilisa Fernanda
         elif "YEILISA" in nombre:
             return 1163 / 2400
-        
-
-    # ==================================================
-    # METRO EST. SAN ANTONIO
-    # ==================================================
-
-    if cvs == "METRO EST. SAN ANTONIO":
-
-        # Líder
-        if rol == "LIDER":
-            return 770 / 1000
-
-        # Daniel
-        elif "DANIEL" in nombre:
-            return 92 / 1000
-
-        # Jeider
-        elif "JEIDER" in nombre:
-            return 138 / 1000            
+                   
 
     # ==================================================
     # JUNIN
@@ -234,6 +216,52 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
         elif "EVELYN" in nombre:
             return 1108 / 1500
 
+
+    # ==================================================
+    # METRO EST. SAN ANTONIO
+    # ==================================================
+
+    if cvs == "METRO EST. SAN ANTONIO":
+
+        # Lider
+        if rol == "LIDER":
+            return 538 / 1000
+
+        # Daniel
+        elif "DANIEL" in nombre:
+            return 185 / 1000
+        
+        # Luz
+        elif "LUZ" in nombre:
+            return 277 / 1000
+
+    # ==================================================
+    # ZARAGOZA
+    # ==================================================
+
+    if cvs == "ZARAGOZA":
+
+        # Lider
+        if rol == "LIDER":
+            return 138 / 1800
+
+        # Paola
+        elif "PAOLA" in nombre:
+            return 1662 / 1800
+
+    # ==================================================
+    # GIRARDOTA
+    # ==================================================
+
+    if cvs == "GIRARDOTA":
+
+        # Lider
+        if rol == "LIDER":
+            return 431 / 2000
+
+        # Narelig
+        elif "NARELIG" in nombre:
+            return 1569 / 2000
     
     # ==================================================
     # 🔴 REGLAS NORMALES
