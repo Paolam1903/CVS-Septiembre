@@ -34,7 +34,7 @@ if not RUTA_LIQ.exists() or not RUTA_METAS.exists():
 # =============================
 st.markdown("""
 <div style="background-color:#E30613;padding:15px;border-radius:10px">
-<h1 style="color:white;text-align:center">📊 Dashboard Comercial ventas de septiembre, Accesorios al26,CVS PLUS al 28 – y Encuestas al 26 de septiembre</h1>
+<h1 style="color:white;text-align:center">📊 Dashboard Comercial ventas Y Accesorios de septiembre ,CVS PLUS al 28 – y Encuestas al 26 de septiembre</h1>
 </div>
 """, unsafe_allow_html=True)
 
