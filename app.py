@@ -34,7 +34,7 @@ if not RUTA_LIQ.exists() or not RUTA_METAS.exists():
 # =============================
 st.markdown("""
 <div style="background-color:#E30613;padding:15px;border-radius:10px">
-<h1 style="color:white;text-align:center">📊 Dashboard Comercial ventas Y Accesorios de septiembre ,CVS PLUS al 28 – y Encuestas al 26 de septiembre</h1>
+<h1 style="color:white;text-align:center">📊 Dashboard Comercial final, Accesorios, CVS PLUS – y Encuestas de septiembre</h1>
 </div>
 """, unsafe_allow_html=True)
 
@@ -646,19 +646,19 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
 
         # Líder
         if rol == "LIDER":
-            return 575.1 / 6800
+            return 615 / 6800
 
         # Nasly Johanna
         elif "NASLY" in nombre:
-            return 1813.3 / 6800
+            return 1898 / 6800
 
         # Jessica
         elif "JESSICA" in nombre:
-            return 1813.3 / 6800
+            return 1604 / 6800
 
         # Sandra Milena
         elif "SANDRA" in nombre:
-            return 1813.3 / 6800
+            return 1898 / 6800
 
         # YULIANA
         elif "YULIANA" in nombre:
@@ -807,6 +807,38 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
         # Narelig
         elif "NARELIG" in nombre:
             return 1569 / 2000
+
+    # ==================================================
+    # COPACABANA
+    # ==================================================
+
+    if cvs == "COPACABANA":
+
+        # Lider
+        if rol == "LIDER":
+            return 836 / 3000
+
+        # Alexandra
+        elif "ALEXANDRA" in nombre:
+            return 909 / 3000
+        
+        # Bibiana
+        elif "BIBIANA" in nombre:
+            return 1255 / 3000
+
+    # ==================================================
+    # NECHI
+    # ==================================================
+
+    if cvs == "NECHI":
+
+        # Lider
+        if rol == "LIDER":
+            return 523 / 2000
+
+        # LeidisÂ 
+        elif "LEIDISÂ " in nombre:
+            return 1477 / 2000
     
         
     # ==================================================
