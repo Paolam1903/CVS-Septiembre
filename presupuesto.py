@@ -8,14 +8,7 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
     cvs = str(cvs).upper()
     nombre = str(nombre).upper() if nombre else ""
     
-    # ==================================================
-    # 🔴 REGLA ESPECIA
-    # ==================================================
-    if cvs in ["SEGOVIA"]:
-        if rol == "LIDER":
-            return 0.50
-        else:
-            return 0.50          
+    # ==================================================         
 
     # ==================================================
     # EL BAGRE
