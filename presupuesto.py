@@ -108,6 +108,10 @@ def calcular_distribucion(n_asesores, cvs, nombre=None, rol=None):
         elif "YULIANA" in nombre:
             return 785 / 6800
 
+        # Sara
+        elif "SARA" in nombre:
+            return 209 / 6800
+
     # ==================================================
     # SABANETA
     # ==================================================
